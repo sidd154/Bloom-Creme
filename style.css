@@ -42,6 +42,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -1792,7 +1794,7 @@ textarea.form-input {
     height: 70px;
   }
   .nav-menu {
-    display: none; /* Hide header menus on mobile, floating actions are fine */
+    display: none; /* Hide header menus on mobile */
   }
   .contact-phone-header {
     display: none;
@@ -1800,6 +1802,26 @@ textarea.form-input {
   .hero {
     padding-top: 100px;
     padding-bottom: 50px;
+    overflow-x: hidden; /* Prevent page shifts */
+    width: 100%;
+  }
+  .hero-image-wrapper {
+    overflow: hidden !important; /* Contain particles inside boundaries on mobile */
+    padding: 20px 0;
+  }
+  .floating-particle {
+    display: none !important; /* Hide particles on mobile for layout & performance */
+  }
+  .hero-badge-tag {
+    display: none !important; /* Hide badges on mobile to prevent overflow and save space */
+  }
+  .hero-banner-image {
+    max-width: 270px; /* Restrict width for mobile layouts */
+    transform: none !important; /* Disable hover tilt on mobile for performance */
+  }
+  .hero-glow-aura {
+    width: 240px;
+    height: 240px;
   }
   .section-header h2 {
     font-size: 32px;
