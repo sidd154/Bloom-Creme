@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom n Creme | Premium Cake & Flower Decorators in Chennai</title>
+  <meta name="description" content="Custom-crafted floral birthday cakes, themed cupcakes, and fresh flower arrangements delivered same-day in Chennai. Experience Bloom n Creme luxury.">
+  
+  <!-- FontAwesome Icons & Google Font Import Pre-connects -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main Stylesheet Sheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       1. HEADER / NAVIGATION SYSTEM
+       ========================================== -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo-wrapper">
+        <img src="Cake pics/logo.png" alt="Bloom n Creme" class="brand-logo-img">
+      </a>
+      
+      <nav class="nav-menu">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#catalog" class="nav-link">Cake Menu</a>
+        <a href="#about" class="nav-link">Our Studio</a>
+        <a href="#about" class="nav-link">Contact</a>
+      </nav>
+      
+      <div class="header-actions">
+        <a href="tel:+917010316035" class="contact-phone-header">
+          <i class="fas fa-phone-alt"></i> Call: 70103 16035
+        </a>
+        <button class="cart-trigger" onclick="openCartDrawer()" aria-label="Open Shopping Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <!-- Morphing Hamburger Button -->
+        <button class="hamburger-btn" id="menu-drawer-toggle" aria-label="Toggle Menu Drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MENU DRAWER NAVIGATION (Hamburger Side Panel)
+       ========================================== -->
+  <div class="menu-drawer-overlay" id="menu-drawer-overlay"></div>
+  <div class="menu-drawer" id="menu-drawer">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <img src="Cake pics/logo.png" alt="Bloom n Creme" class="brand-logo-img">
+      </div>
+      <button class="drawer-close" id="menu-drawer-close" aria-label="Close Menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="drawer-body">
+      <nav class="drawer-nav">
+        <a href="#" class="drawer-nav-link"><i class="fas fa-home"></i> Home</a>
+        <a href="#catalog" class="drawer-nav-link"><i class="fas fa-birthday-cake"></i> Cake Menu</a>
+        <a href="#new-collections" class="drawer-nav-link"><i class="fas fa-sparkles"></i> New Collection</a>
+        <a href="#cake-matcher" class="drawer-nav-link"><i class="fas fa-magic"></i> Cake Matcher</a>
+        <a href="#about" class="drawer-nav-link"><i class="fas fa-store"></i> Our Studio</a>
+        <a href="#about" class="drawer-nav-link"><i class="fas fa-paper-plane"></i> Contact</a>
+      </nav>
+      
+      <div class="drawer-divider"></div>
+      
+      <div class="drawer-info">
+        <h4><i class="fas fa-clock"></i> Baker Hours</h4>
+        <p>Mon - Sun: 9:00 AM - 10:00 PM</p>
+        <p class="midnight-slot"><i class="fas fa-truck"></i> Midnight Slots Active</p>
+        
+        <h4><i class="fas fa-phone-alt"></i> Quick Contact</h4>
+        <p><a href="tel:+917010316035">+91 70103 16035</a></p>
+        <p><a href="https://wa.me/917010316035" target="_blank"><i class="fab fa-whatsapp" style="color: #25D366;"></i> Chat with Designer</a></p>
+      </div>
+    </div>
+    
+    <div class="drawer-footer">
+      <div class="social-row">
+        <a href="https://instagram.com/bloomncreme" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/917010316035" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p class="copyright">&copy; 2026 Bloom n Creme Chennai</p>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       2. HERO SECTION & LOCATION CHECKER
+       ========================================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Bespoke <span>Floral Cakes</span> & Decorators in Chennai</h1>
+        <p class="hero-subtitle">Elevate your special moments with luxury floral customizations, handcrafted birthday cakes, and fresh, organic flower arrangements.</p>
+        
+        <!-- Delivery Checker Component -->
+        <div class="delivery-checker">
+          <h3><i class="fas fa-map-marker-alt" style="color: var(--color-soft-rose);"></i> Check Area Delivery Eligibility</h3>
+          <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 12px;">We deliver freshly baked customized cakes across Chennai city limits.</p>
+          <div class="checker-input-group">
+            <input type="text" id="pincode-input" class="checker-input" placeholder="Enter 6-digit Chennai Pincode (e.g. 600106)" maxlength="6">
+            <button class="btn btn-primary checker-btn" onclick="checkDeliveryPincode()">Check</button>
+          </div>
+          <div id="pincode-result" class="checker-result"></div>
+        </div>
+        
+        <div class="hero-actions-row">
+          <a href="#catalog" class="btn btn-primary">Explore Cake Menu <i class="fas fa-arrow-right"></i></a>
+          <a href="https://wa.me/917010316035" target="_blank" class="btn btn-outline" style="margin-left: 10px;">
+            <i class="fab fa-whatsapp" style="color: #25D366; font-size: 16px;"></i> Talk to our Designer
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-image-wrapper">
+        <!-- Pulse Glowing Backdrop Aura -->
+        <div class="hero-glow-aura"></div>
+        
+        <!-- Floating Particles (Leaves, Petals, Sparkles) -->
+        <div class="floating-particle leaf-1"></div>
+        <div class="floating-particle leaf-2"></div>
+        <div class="floating-particle petal-1"></div>
+        <div class="floating-particle petal-2"></div>
+        <div class="floating-particle sparkle-1"></div>
+        <div class="floating-particle sparkle-2"></div>
+        
+        <!-- Floating details tag top -->
+        <div class="hero-badge-tag tag-top">
+          <i class="fas fa-seedling"></i>
+          <div class="hero-badge-text">
+            <p>Quality Guarantee</p>
+            <h4>100% Vegetarian</h4>
+          </div>
+        </div>
+        
+        <!-- Main Custom Cake Graphic -->
+        <img src="Cake pics/cut_cake.png" alt="Bloom n Creme Custom Cake" class="hero-banner-image">
+        
+        <!-- Floating details tag bottom -->
+        <div class="hero-badge-tag tag-bottom">
+          <i class="fas fa-truck"></i>
+          <div class="hero-badge-text">
+            <p>Chennai Deliveries</p>
+            <h4>Midnight Active</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==========================================
+       3. NEW ARRIVALS: AUTUMN FLORAL & FUSION
+       ========================================== -->
+  <section id="new-collections" class="new-arrivals-section reveal-on-scroll">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-sparkles"></i> Seasonal Highlights</span>
+        <h2>The Autumn Floral & Fusion Collection</h2>
+        <p class="section-subtitle">Exquisite new flavors handcrafted with organic botanical extracts, gold elements, and royal Indian fusions.</p>
+      </div>
+      
+      <!-- Horizontal Scroll Carousel wrapper -->
+      <div class="carousel-container-outer">
+        <button class="carousel-control prev" onclick="document.getElementById('new-collections-carousel').scrollBy({left: -320, behavior: 'smooth'})" aria-label="Previous Slide">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="carousel-wrapper" id="new-collections-carousel">
+          <!-- Dynamically populated via app.js -->
+        </div>
+        <button class="carousel-control next" onclick="document.getElementById('new-collections-carousel').scrollBy({left: 320, behavior: 'smooth'})" aria-label="Next Slide">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. PERSONALIZATION: FLAVOR MATCHER QUIZ
+       ========================================== -->
+  <section id="cake-matcher" class="personalizer-section reveal-on-scroll">
+    <div class="container">
+      <div class="personalizer-card">
+        <div class="personalizer-grid">
+          <div class="personalizer-intro">
+            <span class="personalizer-tag"><i class="fas fa-magic"></i> Interactive Assistant</span>
+            <h2>Find Your Perfect Sweet Match</h2>
+            <p>Answer three simple questions, and our baking assistant will recommend the absolute best gourmet custom cake matching your taste, guest profile, and celebration vibe!</p>
+            <div class="personalizer-decor">
+              <i class="fas fa-birthday-cake"></i>
+              <i class="fas fa-sparkles"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+          
+          <div class="personalizer-quiz-box">
+            <form id="matcher-quiz-form">
+              <div class="form-group">
+                <label class="form-label" for="matcher-occasion">1. What's the Occasion?</label>
+                <select id="matcher-occasion" class="form-input select-styled">
+                  <option value="birthday">Birthday Celebration</option>
+                  <option value="anniversary">Romance & Anniversary</option>
+                  <option value="midnight">Midnight Surprise Delivery</option>
+                  <option value="cheat">Cheat Day & Cravings</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="matcher-vibe">2. Choose Your Taste Profile</label>
+                <select id="matcher-vibe" class="form-input select-styled">
+                  <option value="chocolatey">Decadent Chocolate Overload</option>
+                  <option value="fruity">Light, Fresh & Berry Fruity</option>
+                  <option value="traditional">Traditional Fusion & Saffron</option>
+                  <option value="creamy">Classic Cream & Butterscotch</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="matcher-audience">3. Who is the Star of the Day?</label>
+                <select id="matcher-audience" class="form-input select-styled">
+                  <option value="partner">Partner or Spouse</option>
+                  <option value="kids">Children and Teenagers</option>
+                  <option value="parents">Parents and Family Elders</option>
+                  <option value="friends">Friends and Colleagues</option>
+                </select>
+              </div>
+              
+              <button type="submit" class="btn btn-primary matcher-submit-btn">
+                Calculate My Sweet Match <i class="fas fa-wand-magic-sparkles"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Recommended match results container (Initially hidden, revealed on submit) -->
+      <div class="matcher-results-wrapper" id="matcher-results-box" style="display: none;">
+        <h3 class="matcher-results-title"><i class="fas fa-gift"></i> Recommended Sweet Matches for You</h3>
+        <p class="matcher-results-subtitle">We found three perfect fits matching your preferences! Click to customize and pre-fill your ordering credentials.</p>
+        <div class="matcher-results-grid" id="matcher-results-grid">
+          <!-- Loaded dynamically via app.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. STORE CATALOG SECTION
+       ========================================== -->
+  <section id="catalog" class="store-catalog">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <h2>Handcrafted Cake Studio</h2>
+        <p class="section-subtitle">Browse our premium custom cake menus. Select your cake flavor, toggle eggless preferences, specify weights, and add customized icing messages.</p>
+      </div>
+      
+      <!-- Catalog expander button and Search widget -->
+      <div class="catalog-reveal-header reveal-on-scroll">
+        <button class="btn btn-outline catalog-expand-btn" id="catalog-expand-btn" onclick="toggleCatalogView()">
+          Explore Whole Collection (30+ Cakes) <i class="fas fa-chevron-down"></i>
+        </button>
+      </div>
+
+      <!-- Advanced controls (Category filters + live search bar) - Hidden initially, slides down on expand -->
+      <div class="catalog-advanced-controls" id="catalog-advanced-controls">
+        <div class="catalog-search-wrapper">
+          <div class="search-input-group">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="catalog-search-input" class="catalog-search-input" placeholder="Search by cake name or flavor (e.g. Truffle, Biscoff, Rose)..." oninput="triggerCatalogSearch()">
+          </div>
+        </div>
+        
+        <!-- Category Filters -->
+        <div class="catalog-filters">
+          <button class="filter-btn active" onclick="filterCategory('all', this)">All Cakes</button>
+          <button class="filter-btn" onclick="filterCategory('bento', this)">Bento Cakes (300g)</button>
+          <button class="filter-btn" onclick="filterCategory('classic', this)">Classic Cakes (0.5/1kg)</button>
+          <button class="filter-btn" onclick="filterCategory('premium', this)">Premium & Chocolates</button>
+        </div>
+      </div>
+      
+      <!-- Dynamic Products Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- JavaScript loads cards dynamically here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. SLIDE-OUT CART DRAWER PANEL
+       ========================================== -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2><i class="fas fa-shopping-bag" style="color: var(--color-forest-green);"></i> Shopping Bag</h2>
+      <button class="cart-close-btn" onclick="closeCartDrawer()" aria-label="Close Cart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <!-- Cart Items rows container -->
+    <div class="cart-items-container" id="cart-items">
+      <!-- Managed dynamically via JavaScript -->
+    </div>
+    
+    <!-- Cart calculation section -->
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span class="cart-summary-label">Subtotal</span>
+        <span class="cart-summary-value" id="cart-subtotal-val">₹0</span>
+      </div>
+      <div class="cart-summary-row">
+        <span class="cart-summary-label">Delivery Fee</span>
+        <span class="cart-summary-value" style="color: #0f8a5f; font-weight: 700;">FREE</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span class="cart-summary-label">Total Amount</span>
+        <span class="cart-summary-value" id="cart-total-val">₹0</span>
+      </div>
+      <button class="btn btn-primary cart-checkout-btn" id="cart-checkout-action" onclick="openCheckoutModal()">
+        Proceed to Checkout <i class="fas fa-shopping-cart" style="margin-left: 8px;"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       5. MODAL: CAKE CUSTOMIZATION DRAWER
+       ========================================== -->
+  <div class="modal-overlay" id="customization-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" onclick="closeCustomization()" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="customization-content">
+        <div class="customization-header">
+          <div class="customization-media" id="custom-modal-media">
+            <!-- Icon template -->
+          </div>
+          <div class="customization-meta">
+            <h2 id="custom-modal-title">Vanilla Bento Cake</h2>
+            <p id="custom-modal-desc" style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 8px;"></p>
+            <span class="customization-meta-price" id="custom-modal-price-starts">₹349</span>
+          </div>
+        </div>
+        
+        <div class="customization-body">
+          <!-- Size selection (Dynamic Variants) -->
+          <div class="form-group">
+            <label class="form-label">Select Weight / Size</label>
+            <div class="segmented-selector" id="custom-variants-row">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+          
+          <!-- 100% Veg Eggless Toggle Switch -->
+          <div class="form-group">
+            <div class="toggle-switch-wrapper">
+              <span class="toggle-label-text" style="color: var(--color-forest-green);"><i class="fas fa-seedling" style="color: #0f8a5f;"></i> 100% Vegetarian (Eggless Cake)</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="cake-eggless-toggle" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <p style="font-size: 11px; color: var(--color-text-muted); margin-top: 4px; padding-left: 4px;">All our ingredients are 100% halal and vegetarian friendly.</p>
+          </div>
+          
+          <!-- Message written on top of the cake -->
+          <div class="form-group">
+            <label class="form-label" for="cake-custom-message">Message on Cake (Max 30 characters)</label>
+            <input type="text" id="cake-custom-message" class="form-input" placeholder="e.g. Happy Birthday Siddharth!" maxlength="30">
+          </div>
+          
+          <!-- Note for the custom greeting card -->
+          <div class="form-group">
+            <label class="form-label" for="card-custom-message">Gift Card Personal Message</label>
+            <textarea id="card-custom-message" class="form-input" placeholder="Write a warm note to be delivered alongside the cake..."></textarea>
+          </div>
+          
+          <!-- Upload custom image field (For Photo Cakes) -->
+          <div class="form-group" id="photo-upload-group" style="display: none;">
+            <label class="form-label">Edible Photo Upload</label>
+            <div class="upload-btn-wrapper">
+              <div class="upload-btn-trigger">
+                <i class="fas fa-cloud-upload-alt"></i> Select Reference Photo
+              </div>
+              <input type="file" id="cake-photo-file" accept="image/*" onchange="handleImageUpload(event)">
+            </div>
+            <div class="upload-preview" id="photo-upload-preview">
+              <img id="upload-preview-img" src="" alt="Edible Upload">
+              <span class="upload-preview-name" id="upload-preview-name">ref-image.jpg</span>
+              <button class="upload-preview-remove" onclick="removeUploadedImage()"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="customization-submit-box">
+          <div>
+            <span class="customization-total-label">Total Amount</span>
+            <div class="customization-total-price" id="custom-submit-price">₹349</div>
+          </div>
+          <button class="btn btn-primary" onclick="submitToCart()">Add Custom Cake <i class="fas fa-plus" style="margin-left: 8px;"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       6. MODAL: DELIVERY & CHECKOUT FORM
+       ========================================== -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-box checkout-box">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="customization-content">
+        <h2 style="font-size: 28px; margin-bottom: 8px;"><i class="fas fa-truck-loading" style="color: var(--color-forest-green); margin-right: 8px;"></i> Delivery details</h2>
+        <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 24px;">Please provide the Chennai delivery address and preferred delivery time slots below.</p>
+        
+        <form onsubmit="submitCheckoutForm(event)">
+          <div class="checkout-grid">
+            <div class="form-group">
+              <label class="form-label" for="checkout-name">Recipient Name *</label>
+              <input type="text" id="checkout-name" class="form-input" placeholder="Enter recipient's full name" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="checkout-phone">Mobile Phone Number *</label>
+              <input type="tel" id="checkout-phone" class="form-input" placeholder="e.g. 9876543210" pattern="[6789]\d{9}" required>
+            </div>
+            
+            <div class="form-group checkout-grid-full">
+              <label class="form-label" for="checkout-address">Delivery Street Address *</label>
+              <input type="text" id="checkout-address" class="form-input" placeholder="Flat No, Street Name, Landmark, Area Name" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="checkout-pincode">Chennai Pincode *</label>
+              <input type="text" id="checkout-pincode" class="form-input" placeholder="starts with 600" maxlength="6" pattern="^600\d{3}$" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="checkout-date">Delivery Date *</label>
+              <input type="date" id="checkout-date" class="form-input" required>
+            </div>
+            
+            <!-- Delivery Slot Selection Radio pills -->
+            <div class="delivery-slot-container">
+              <label class="form-label">Delivery Time Slot Preference</label>
+              <div class="slot-selection-row">
+                <div class="slot-option">
+                  <input type="radio" id="slot-std" name="checkout-slot" value="Standard Delivery (10:00 AM - 6:00 PM)" checked>
+                  <label for="slot-std" class="slot-label">
+                    Standard Slot
+                    <span>10 AM - 6 PM (Free)</span>
+                  </label>
+                </div>
+                <div class="slot-option">
+                  <input type="radio" id="slot-express" name="checkout-slot" value="Express Delivery (3:00 PM - 5:00 PM)">
+                  <label for="slot-express" class="slot-label">
+                    Express Slot
+                    <span>3 PM - 5 PM (Free)</span>
+                  </label>
+                </div>
+                <div class="slot-option">
+                  <input type="radio" id="slot-midnight" name="checkout-slot" value="Midnight Delivery (11:00 PM - 12:00 AM)">
+                  <label for="slot-midnight" class="slot-label">
+                    Midnight Slot
+                    <span>11 PM - 12 AM (Free)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group checkout-grid-full">
+              <label class="form-label" for="checkout-payment">Preferred Payment Method</label>
+              <select id="checkout-payment" class="form-input">
+                <option value="UPI">Pay via UPI App (GPay/PhonePe/Paytm)</option>
+                <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="customization-submit-box">
+            <button type="button" class="btn btn-outline" onclick="closeCheckoutModal()">Cancel</button>
+            <button type="submit" class="btn btn-primary">Process Order Details <i class="fas fa-check-circle" style="margin-left: 8px;"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       7. MODAL: ORDER SUCCESS & WHATSAPP REDIRECT
+       ========================================== -->
+  <div class="modal-overlay" id="success-modal">
+    <div class="modal-box success-box">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h2>Order Formed!</h2>
+      <p>Your custom cake order invoice details has been generated successfully. Please follow the instructions below to finalize delivery.</p>
+      
+      <!-- Generated order summary block will load here -->
+      <div id="success-order-info"></div>
+      
+      <!-- UPI QR Code block (Loads only if selected payment is UPI) -->
+      <div class="upi-section" id="success-upi-box" style="display: none;">
+        <h4><i class="fas fa-qrcode"></i> Quick Scan & Pay via UPI</h4>
+        <p style="font-size: 12px; color: var(--color-text-muted);">Please scan this UPI code and pay. You can attach the screenshot to your WhatsApp message!</p>
+        <div class="upi-qr-placeholder">
+          <i class="fas fa-qrcode"></i>
+          <span style="font-size: 11px; font-weight: 700;">BLOOM N CREME QR</span>
+        </div>
+        <div class="upi-id-box">
+          <i class="fas fa-wallet"></i> UPI ID: <strong>bloomncreme@okaxis</strong>
+        </div>
+      </div>
+      
+      <div style="background-color: var(--color-rose-light); padding: 16px; border-radius: var(--border-radius-sm); border: 1px solid rgba(212, 140, 140, 0.2); margin-bottom: 24px; font-size: 13px; color: #925353;">
+        <strong>FINAL STEP:</strong> Click the button below. This will launch a chat with our designers and pre-fill your exact order receipt so we can lock in your delivery!
+      </div>
+      
+      <button class="btn whatsapp-finalize-btn" onclick="redirectOrderToWhatsApp()">
+        <i class="fab fa-whatsapp" style="margin-right: 8px; font-size: 20px;"></i> Send Receipt to WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       8. STUDIO DETAILS & ABOUT SECTION
+       ========================================== -->
+  <section id="about" class="store-info-section">
+    <div class="container store-info-grid">
+      <div class="store-info-text">
+        <h2>Visit Bloom n Creme Studio</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 16px;">We are a premier, boutique cake studio and fresh flower design service based in Arumbakkam, Chennai. Our bakers specialize in elegant wedding tiers, beautiful custom Bento box lunchbox cakes, and premium organic-designed floral themes.</p>
+        
+        <div class="info-cards">
+          <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Our Address</h4>
+            <p>No 368A, 20th Street, NSK Nagar, Arumbakkam, Chennai - 600106</p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-clock"></i>
+            <h4>Baking Hours</h4>
+            <p>Everyday: 9:00 AM - 10:00 PM<br>Midnight delivery slots active.</p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-phone-alt"></i>
+            <h4>Phone Contact</h4>
+            <p>70103 16035<br>88385 22337</p>
+          </div>
+          <div class="info-card">
+            <i class="fab fa-instagram"></i>
+            <h4>Instagram Handle</h4>
+            <p>@BLOOMNCREME<br>Follow us for daily cake designs!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       9. FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3>Bloom n Creme</h3>
+          <p>Handcrafting beautiful moments through gorgeous floral decorations, fresh bouquets, and delicious gourmet cakes in Chennai.</p>
+          <div class="social-row">
+            <a href="https://instagram.com/bloomncreme" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/917010316035" target="_blank" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Studio Menus</h4>
+          <ul>
+            <li><a href="#catalog" onclick="filterCategory('bento', document.querySelector('.filter-btn:nth-child(2)'))">Bento Cakes (300g)</a></li>
+            <li><a href="#catalog" onclick="filterCategory('classic', document.querySelector('.filter-btn:nth-child(3)'))">Classic Sponges (0.5/1kg)</a></li>
+            <li><a href="#catalog" onclick="filterCategory('premium', document.querySelector('.filter-btn:nth-child(4)'))">Premium Chocolates</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Get In Touch</h4>
+          <p><i class="fas fa-map-marked-alt"></i> No 368A, 20th Street, NSK Nagar, Arumbakkam, Chennai - 600106</p>
+          <p><i class="fas fa-phone-alt"></i> 70103 16035 / 88385 22337</p>
+          <p><i class="fas fa-envelope"></i> order@bloomncreme.com</p>
+        </div>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2026 Bloom n Creme Chennai. All Rights Reserved.</p>
+        <p>Custom Headless Storefront &bull; Connected to Shopify</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       10. SCRIPTS LOOPS (Shopify + Config + App)
+       ========================================== -->
+  <!-- Shopify Storefront JS Buy SDK -->
+  <script src="https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
+  
+  <!-- App Configuration file -->
+  <script src="config.js"></script>
+  
+  <!-- Core E-commerce Controller App -->
+  <script src="app.js"></script>
+  
+</body>
+</html>
